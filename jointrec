@@ -124,7 +124,7 @@ public:
         
     correct(vector<float> &eps){            // generates coding tables
         m = eps.size(); mp = 1<<m;  
-        wg0=1;                              // chosen experimentally ?!?
+        wg0 = m - N;                              // ~ -lg(probability of error detection)
         for(float e:eps) 
             wg0 += log(max((float)0.00001, 1-e))/log(2);
         vector<float> erpen;                // error penalties for all m positions
