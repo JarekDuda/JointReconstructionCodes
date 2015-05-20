@@ -75,7 +75,7 @@ public:
         int t[64]; for(int i=0; i<64; i++) t[i]=i;
         for(int i=0; i<m; i++){                 // find random m unique packets
             int tm = rand() % (64-i); which.push_back(t[tm]);      
-            received.push_back(packets[tm]);            
+            received.push_back(packets[t[tm]]);            
             t[tm] = t[63-i];
         }
         // for(int i=0; i<m; i++) cout<<which[i]<<" ";
